@@ -1,0 +1,23 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "A Backend Application for small project",
+  "main": "main.js",
+  "scripts": {
+    "test": "nodemon main.js",
+    "format": "prettier --write ."
+  },
+  "author": "Abdullah",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.14.2",
+    "nodemon": "^3.1.10"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "prettier": "^3.5.3"
+  }
+}
