@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TODO List</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <h1>Maintain Your To-Do List (FIFO style)</h1>
+  </div>
+
+  <div class="main">
+
+    <div class="buttons">
+      <div id="delete" onclick="remove()" class="button">Delete</div>
+      <div id="update" onclick="Updat()" class="button">Update</div>
+    </div>
+
+    <div class="add">
+      <input class="input" title="Todo" type="text" placeholder="Enter Your Work To Add">
+      <button class="button" onclick="clicked()" type="button" id="add">Add</button>
+    </div>
+
+    <div class="list">
+      <p>Your Todos Will Be Displayed Here</p>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
