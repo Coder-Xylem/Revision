@@ -3,6 +3,7 @@
 This document provides details about the X-Tweet API endpoints, request/response formats, and example usage.
 
 ## Base URL
+
 ```
 http://localhost:5000
 ```
@@ -10,6 +11,7 @@ http://localhost:5000
 ## API Endpoints
 
 ### 1. Get All Tweets
+
 Retrieves all tweets sorted by creation date (newest first).
 
 - **URL**: `/api/tweets`
@@ -18,8 +20,10 @@ Retrieves all tweets sorted by creation date (newest first).
 - **Permissions**: None
 
 #### Success Response:
+
 - **Code**: 200 OK
 - **Content Example**:
+
 ```json
 [
   {
@@ -50,8 +54,10 @@ Retrieves all tweets sorted by creation date (newest first).
 ```
 
 #### Error Response:
+
 - **Code**: 500 Internal Server Error
 - **Content**:
+
 ```json
 {
   "message": "Server error while fetching tweets"
@@ -59,18 +65,21 @@ Retrieves all tweets sorted by creation date (newest first).
 ```
 
 ### 2. Get Single Tweet by ID
+
 Retrieves a specific tweet by its ID.
 
 - **URL**: `/api/tweets/:id`
 - **Method**: `GET`
-- **URL Params**: 
+- **URL Params**:
   - Required: `id=[MongoDB ObjectId]`
 - **Auth Required**: No
 - **Permissions**: None
 
 #### Success Response:
+
 - **Code**: 200 OK
 - **Content Example**:
+
 ```json
 {
   "_id": "60d21b4667d0d8992e610c85",
@@ -87,8 +96,10 @@ Retrieves a specific tweet by its ID.
 ```
 
 #### Error Responses:
+
 - **Code**: 404 Not Found
 - **Content**:
+
 ```json
 {
   "message": "Tweet not found"
@@ -97,6 +108,7 @@ Retrieves a specific tweet by its ID.
 
 - **Code**: 400 Bad Request
 - **Content**:
+
 ```json
 {
   "message": "Invalid tweet ID format"
@@ -105,6 +117,7 @@ Retrieves a specific tweet by its ID.
 
 - **Code**: 500 Internal Server Error
 - **Content**:
+
 ```json
 {
   "message": "Server error while fetching tweet"
@@ -112,6 +125,7 @@ Retrieves a specific tweet by its ID.
 ```
 
 ### 3. Create New Tweet
+
 Creates a new tweet.
 
 - **URL**: `/api/tweets`
@@ -120,6 +134,7 @@ Creates a new tweet.
 - **Permissions**: None
 - **Content-Type**: `application/json`
 - **Body**:
+
 ```json
 {
   "tweet": "This is my new tweet!",
@@ -128,8 +143,10 @@ Creates a new tweet.
 ```
 
 #### Success Response:
+
 - **Code**: 201 Created
 - **Content Example**:
+
 ```json
 {
   "_id": "60d21b4667d0d8992e610c87",
@@ -146,8 +163,10 @@ Creates a new tweet.
 ```
 
 #### Error Responses:
+
 - **Code**: 400 Bad Request
 - **Content**:
+
 ```json
 {
   "message": "Tweet content and author are required"
@@ -156,6 +175,7 @@ Creates a new tweet.
 
 - **Code**: 400 Bad Request
 - **Content**:
+
 ```json
 {
   "message": "Tweet cannot exceed 280 characters"
@@ -164,6 +184,7 @@ Creates a new tweet.
 
 - **Code**: 500 Internal Server Error
 - **Content**:
+
 ```json
 {
   "message": "Server error while creating tweet"
@@ -171,18 +192,21 @@ Creates a new tweet.
 ```
 
 ### 4. Like a Tweet
+
 Increments the like count for a specific tweet.
 
 - **URL**: `/api/tweets/like/:id`
 - **Method**: `POST`
-- **URL Params**: 
+- **URL Params**:
   - Required: `id=[MongoDB ObjectId]`
 - **Auth Required**: No
 - **Permissions**: None
 
 #### Success Response:
+
 - **Code**: 200 OK
 - **Content Example**:
+
 ```json
 {
   "message": "Tweet liked successfully",
@@ -192,8 +216,10 @@ Increments the like count for a specific tweet.
 ```
 
 #### Error Responses:
+
 - **Code**: 404 Not Found
 - **Content**:
+
 ```json
 {
   "message": "Tweet not found"
@@ -202,6 +228,7 @@ Increments the like count for a specific tweet.
 
 - **Code**: 400 Bad Request
 - **Content**:
+
 ```json
 {
   "message": "Invalid tweet ID format"
@@ -210,6 +237,7 @@ Increments the like count for a specific tweet.
 
 - **Code**: 500 Internal Server Error
 - **Content**:
+
 ```json
 {
   "message": "Server error while liking tweet"
@@ -217,18 +245,21 @@ Increments the like count for a specific tweet.
 ```
 
 ### 5. Dislike a Tweet
+
 Increments the dislike count for a specific tweet.
 
 - **URL**: `/api/tweets/dislike/:id`
 - **Method**: `POST`
-- **URL Params**: 
+- **URL Params**:
   - Required: `id=[MongoDB ObjectId]`
 - **Auth Required**: No
 - **Permissions**: None
 
 #### Success Response:
+
 - **Code**: 200 OK
 - **Content Example**:
+
 ```json
 {
   "message": "Tweet disliked successfully",
@@ -238,8 +269,10 @@ Increments the dislike count for a specific tweet.
 ```
 
 #### Error Responses:
+
 - **Code**: 404 Not Found
 - **Content**:
+
 ```json
 {
   "message": "Tweet not found"
@@ -248,6 +281,7 @@ Increments the dislike count for a specific tweet.
 
 - **Code**: 400 Bad Request
 - **Content**:
+
 ```json
 {
   "message": "Invalid tweet ID format"
@@ -256,6 +290,7 @@ Increments the dislike count for a specific tweet.
 
 - **Code**: 500 Internal Server Error
 - **Content**:
+
 ```json
 {
   "message": "Server error while disliking tweet"

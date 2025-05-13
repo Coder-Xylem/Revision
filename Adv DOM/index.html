@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<style>
+    body{
+        background: black;
+        color:white;
+    }
+    button{
+        background-color: yellow;
+        padding: 8px;
+        margin: 5px;
+        border-radius: 8px;
+
+    }
+    button:hover{
+        cursor: pointer;
+        opacity: 0.9;
+    }
+</style>
+<body>
+    <button type="button" onclick="add1()">
+        Click Me
+    </button>
+    <button type="button" onclick="add2()">
+        Click Me
+    </button>
+    <button type="button" onclick="addCard()">Add Card</button>
+    
+
+</body>
+<script>
+function add1(){
+    const div = document.createElement("div")
+    div.innerHTML="<span>Click Again to Add</span>"
+   
+    document.querySelector('body').appendChild(div)
+}
+function add2(){
+    const d = document.createElement("div")
+    const sp = document.createElement("span")
+    sp.innerText = "Hello 2"
+    d.appendChild(sp)
+    document.querySelector("body").appendChild(d)
+}
+//addCard is chatGPTied
+function addCard() {
+    // Create card container
+    const card = document.createElement("div");
+    card.style.border = "1px solid #ccc";
+    card.style.borderRadius = "10px";
+    card.style.padding = "16px";
+    card.style.margin = "10px 0";
+    card.style.backgroundColor = "#1e1e1e";
+    card.style.color = "white";
+    card.style.width = "300px";
+    card.style.boxShadow = "0 4px 8px rgba(0,0,0,0.3)";
+
+    // Title
+    const title = document.createElement("h2");
+    title.innerText = "Card Title";
+    title.style.marginBottom = "8px";
+    card.appendChild(title);
+
+    // Image
+    // const img = document.createElement("img");
+    // // img.src = "https://via.placeholder.com/300x150";
+    // img.alt = "Card Image";
+    // img.style.width = "100%";
+    // img.style.borderRadius = "6px";
+    // img.style.marginBottom = "10px";
+    // card.appendChild(img);
+
+    // Description
+    const description = document.createElement("p");
+    description.innerText = "This is a sample description inside the card. It shows how to structure and style elements programmatically.";
+    description.style.fontSize = "14px";
+    card.appendChild(description);
+
+    // Button
+    const button = document.createElement("button");
+    button.innerText = "Learn More";
+    button.style.backgroundColor = "yellow";
+    button.style.border = "none";
+    button.style.padding = "8px 12px";
+    button.style.borderRadius = "6px";
+    button.style.marginTop = "10px";
+    button.style.cursor = "pointer";
+
+    // Optional event for the button
+    button.onclick = function () {
+        alert("You clicked Learn More!");
+    };
+
+    card.appendChild(button);
+
+    // Append card to the body
+    document.body.appendChild(card);
+}
+
+</script>
+</html>
