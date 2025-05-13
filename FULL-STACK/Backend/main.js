@@ -34,6 +34,7 @@ const allowedOrigins = [
   'https://revision-amber.vercel.app//write',
   'https://revision-amber.vercel.app//read',
   'http://localhost:3000',
+  'https://revision-fewa.onrender.com',
 ];
 
 // ✅ CORS middleware with dynamic origin check
