@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Create axios instance with base URL
 const api = axios.create({
-  baseURL: 'http://localhost:3000/api',
+  baseURL: 'https://revision-fewa.onrender.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
