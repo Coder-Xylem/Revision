@@ -31,7 +31,7 @@ const allowedOrigins = [
   'http://localhost:5173',
   'http://localhost:5173/write',
   'http://localhost:5173/read',
-  'https://revision-amber.vercel.app/',
+  'https://revision-amber.vercel.app',
   'https://revision-amber.vercel.app/write',
   'https://revision-amber.vercel.app/read',
   'http://localhost:3000',
